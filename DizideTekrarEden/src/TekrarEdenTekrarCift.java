@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+public class TekrarEdenTekrarCift {
+    static boolean isTry(int [] arr, int val){
+        for (int i:arr){
+            if (i==val)
+                return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int [] list={15,8,64,48,3,11,82};
+        int [] duplicate=new int[list.length];
+        int sayac=0;
+
+        for (int i=0;i< list.length;i++){
+            if (list[i]%2==0) {
+                if (!(isTry(duplicate, list[i])))
+                    duplicate[sayac++] = list[i];
+            }
+        }
+
+        //System.out.println(Arrays.toString(duplicate));
+        for (int read:duplicate){
+            if (read!=0)
+                System.out.println(read);
+        }
+    }
+}
